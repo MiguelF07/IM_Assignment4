@@ -1,0 +1,28 @@
+<!--This XML file contains the gestures of the database.-->
+<Gestures>
+  <Gesture>
+    <ID>0</ID>
+    <NAME>CALL</NAME>
+    <SEMANTIC>CALL</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>1</ID>
+    <NAME>CHECK</NAME>
+    <SEMANTIC>CHECK</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>2</ID>
+    <NAME>FOLD</NAME>
+    <SEMANTIC>FOLD</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>3</ID>
+    <NAME>RAISE</NAME>
+    <SEMANTIC>RAISE</SEMANTIC>
+  </Gesture>
+  <Gesture>
+    <ID>4</ID>
+    <NAME>START</NAME>
+    <SEMANTIC>START</SEMANTIC>
+  </Gesture>
+</Gestures>
