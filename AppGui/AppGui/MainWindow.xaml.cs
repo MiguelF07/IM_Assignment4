@@ -126,7 +126,7 @@ namespace AppGui
                         {
                             driver.FindElement(By.Id("btnNewGame")).Click();
                             System.Diagnostics.Debug.WriteLine("O jogo está a ser iniciado.");
-                            call_tts("O jogo está a ser iniciado.");
+                            call_tts("A iniciar a partida");
                         }
                         break;
                     case "END":
@@ -366,7 +366,7 @@ namespace AppGui
             String cardsString = "";
             for(int i = 0; i < final_cards.Count; i++)
             {
-                cardsString = cardsString + ", " + final_cards[i];
+                cardsString = cardsString + ", " + cards[final_cards[i]];
             }
             if(cardsString == "")
             {

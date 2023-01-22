@@ -14,6 +14,8 @@ public enum SecondMod implements IModality{
 	RAISE("[3][RAISE]",1500),
 	FOLD("[2][FOLD]",1500);
     ;
+
+    
     
     private String event;
     private int timeout;
