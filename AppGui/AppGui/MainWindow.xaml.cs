@@ -251,7 +251,7 @@ namespace AppGui
                         {
                             String pot_total = driver.FindElement(By.Id("total-pot")).Text;
                             System.Diagnostics.Debug.WriteLine("O valor total apostado atualmente é " + pot_total.Split('$')[1] + "dólares");
-                            call_tts("O valor total apostado atualmente é " + pot_total.Split('$')[1] + "dólares");
+                            call_tts("O valor na mesa atualmente é " + pot_total.Split('$')[1] + "dólares");
                         }
                         //procurar valor no id="total-pot"
                         break;
