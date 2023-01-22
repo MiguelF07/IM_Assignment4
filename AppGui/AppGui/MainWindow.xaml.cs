@@ -81,21 +81,21 @@ namespace AppGui
             //System.Diagnostics.Debug.WriteLine(((string)json.recognized[2].ToString()));
             System.Diagnostics.Debug.WriteLine("COMANDO");
             System.Diagnostics.Debug.WriteLine(((string)json.recognized[0].ToString()));
-            System.Diagnostics.Debug.WriteLine("CONFIANCA");
-            System.Diagnostics.Debug.WriteLine(((string)json.confidence[0].ToString()));
+            //System.Diagnostics.Debug.WriteLine("CONFIANCA");
+            //System.Diagnostics.Debug.WriteLine(((string)json.confidence[0].ToString()));
 
 
             var text_of_switch = (string)json.recognized[0].ToString();
-            var confidence = float.Parse((string)json.confidence[0].ToString());
+            //var confidence = float.Parse((string)json.confidence[0].ToString());
             this.currentCash = get_Current_Cash();
             
 
-            if(confidence<0.45)
-            {
-                System.Diagnostics.Debug.WriteLine("Não percebi, pode repetir?");
-            }
-            else
-            {
+            //if(confidence<0.45)
+            //{
+            //    System.Diagnostics.Debug.WriteLine("Não percebi, pode repetir?");
+            //}
+            //else
+            //{
                 if (raise_flag == true)
                 {
                     text_of_switch = "RAISE";
@@ -292,7 +292,7 @@ namespace AppGui
                     
                 }
                 this.currentCash = get_Current_Cash();
-            }
+            //}
 
             
 
