@@ -191,12 +191,34 @@ namespace AppGui
                     case "RAISE":
                         if (driver.FindElements(By.Id("raise-button")).Count() > 0)
                         {
-                            var v_min = driver.FindElement(By.Id("raise-button")).Text.Split('$')[1];
-                            driver.FindElement(By.XPath("//*[@id=\"raise-button\"]")).Click();
-                            System.Diagnostics.Debug.WriteLine("Foram apostados " + v_min + " dólares.");
-                            call_tts("Foram apostados " + v_min + " dólares.");
+                        var v_min = driver.FindElement(By.Id("raise-button")).Text.Split('$')[1];
+                        //driver.FindElement(By.XPath("//*[@id=\"raise-button\"]")).Click();
+                        //System.Diagnostics.Debug.WriteLine("Foram apostados " + v_min + " dólares.");
+                        //call_tts("Foram apostados " + v_min + " dólares.");
+                        var numero = int.Parse(json.recognized[2].ToString());
 
+                        if (numero % 10 != 0 || numero < int.Parse(v_min))
+                        {
+                            call_tts("O número da aposta tem de ser múltiplo de 10 e estar entre os valores referidos.");
                         }
+
+                        else
+                        {
+                            var n_of_clicks = (numero - int.Parse(v_min)) / 10;
+                            for (var i = 0; i < n_of_clicks; i++)
+                            {
+                                if (driver.FindElements(By.XPath("//*[@id=\"quick-raises\"]/table/tbody/tr/td/a[7]")).Count() > 0)
+                                {
+                                    driver.FindElement(By.XPath("//*[@id=\"quick-raises\"]/table/tbody/tr/td/a[7]")).Click();
+                                }
+
+                            }
+                            raise_flag = false;
+                            driver.FindElement(By.XPath("//*[@id=\"raise-button\"]")).Click();
+                            call_tts("Foram apostados " + numero + " dólares.");
+                        }
+
+                    }
                         break;
 
                     case "FOLD":
